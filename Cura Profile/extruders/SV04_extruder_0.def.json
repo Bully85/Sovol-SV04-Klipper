@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "name": "Extruder",
+    "inherits": "fdmextruder",
+    "metadata": {
+        "machine": "SV04",
+        "position": "0"
+    },
+
+    "overrides": {
+		"material_diameter": { "default_value": 1.75 }
+    }
+}
