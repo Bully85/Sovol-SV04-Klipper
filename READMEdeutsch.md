@@ -6,6 +6,16 @@ All Config for the SV04 to work with Klipper Mirror and Copy (include images and
 
 # Einleitung:
 Diese Anleitung beschreibt, wie ihr euren SV04 Klippern könnt inkl COPY und MIRROR. Dafür wird ein spezielles Repo von Klipper benötigt.
+
+# Was geht alles?!!!
+
+- Copy Mode (mit unterschiedlichen Temperaturen)
+- Mirror Mode (mit unterschiedlichen Temperaturen)
+- Dual Mode
+- Single Mode
+- Bed Mesh Area
+- Input Shaper
+- uvm.
 ## Benötigt:
 - Raspberry Pi mit W-Lan
 - Optional aber empfohlen original 7“ Touch

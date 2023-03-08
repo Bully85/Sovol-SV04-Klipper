@@ -3,12 +3,27 @@ All Config for the SV04 to work with Klipper Mirror and Copy (include images and
 
 ![KlipperSV04](docs/img/sv04klipper.png)
 
+# Spenden/donate
+
+
+[![Donate with PayPal](https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png)](https://www.paypal.com/donate/?hosted_button_id=GT2MXEEWNUY9E)
+
 # _Für die deutsche Anleitung wählt bitte READMEdeutsch.md_
 
 # Introduction:
 
 This guide describes how you can klipper your SV04 including COPY and MIRROR. A special repo from
 Klipper is required for this.
+
+# What's up?!!!
+
+- Copy Mode (with different temperatures)
+- Mirror Mode (with different temperatures)
+- Dual mode
+- Single mode
+- Bed mesh area
+- Input shapers
+- and much more
 
 ## What you needed:
 
