@@ -6,7 +6,7 @@ All Config for the SV04 to work with Klipper Mirror and Copy (include images and
 # Spenden/donate
 
 
-[![Donate with PayPal](https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png)](https://www.paypal.com/donate/?hosted_button_id=GT2MXEEWNUY9E)
+[![Donate with PayPal](https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png)](https://www.paypal.com/donate/?hosted_button_id=L85ULXXQKALP6)
 
 # _Für die deutsche Anleitung wählt bitte READMEdeutsch.md_
 
