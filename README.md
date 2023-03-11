@@ -12,6 +12,8 @@ All Config for the SV04 to work with Klipper Mirror and Copy (include images and
 
 # Introduction:
 
+First check your Chip if you have STM or GD. you can open your electikbox and look for it or you can test the Z-Tilt in Mainsail (If there is an error you have the GD Chip see printer.cfg)
+
 This guide describes how you can klipper your SV04 including COPY and MIRROR. A special repo from
 Klipper is required for this.
 

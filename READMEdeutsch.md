@@ -5,6 +5,9 @@ All Config for the SV04 to work with Klipper Mirror and Copy (include images and
 
 
 # Einleitung:
+
+Als erstes solltet Ihr überprüfen, welchen Chip Ihr habt. Entweder Ihr öffnet den Elekronikkasten und schaut was auf eurem Chip steht oder ihr probiert in Mainsail den Z-Tilt (sollte hier eine Fehlermeldung kommen habt ihr den GD Chip lösung in der printer.cfg)
+
 Diese Anleitung beschreibt, wie ihr euren SV04 Klippern könnt inkl COPY und MIRROR. Dafür wird ein spezielles Repo von Klipper benötigt.
 
 # In Arbeit..:
