@@ -22,8 +22,8 @@ Currently Cura 5.3 is not supported! but we are working on it...
 
 # What's up?!!!
 
-- Copy Mode (with different temperatures)
-- Mirror Mode (with different temperatures)
+- Copy Mode (with different temperatures / NO first layer settings for the right Extruder it doesnt work)
+- Mirror Mode (with different temperatures  / NO first layer settings for the right Extruder it doesnt work)
 - Dual mode
 - Single mode
 - Bed mesh area
