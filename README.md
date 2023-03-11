@@ -15,6 +15,9 @@ All Config for the SV04 to work with Klipper Mirror and Copy (include images and
 This guide describes how you can klipper your SV04 including COPY and MIRROR. A special repo from
 Klipper is required for this.
 
+#  In progress:
+Currently Cura 5.3 is not supported! but we are working on it...
+
 # What's up?!!!
 
 - Copy Mode (with different temperatures)
