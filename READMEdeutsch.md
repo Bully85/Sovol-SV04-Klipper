@@ -21,6 +21,7 @@ Momentan wird Cura 5.3 nicht untersützt ! wir arbeiten aber dran...
 - Single Mode
 - Bed Mesh Area
 - Input Shaper
+- Das Display geht
 - uvm.
 ## Benötigt:
 - Raspberry Pi mit W-Lan
@@ -73,3 +74,20 @@ Fertig mit SSH
 
 Nun müssen die Dateien und Ordner aus „config“ auf den Raspberry in das Verzeichnis eures Druckers kopieren Standard ist „printer_data“ sollte dies bei euch nicht der Fall sein, bitte in den config und .sh Dateien die pfade anpassen.
 Am besten geht das mit einem SFTP Programm z.b [FileZilla](https://filezilla-project.org/) (Achtung PORT 22)
+
+
+## beheben der ungültig Anzeige in Mainsail:
+
+ssh verbindung zu Klipper und schreibt
+
+sudo nano ~/printer_data/systemd/moonraker.env
+![moonraker.env1](docs/img/moonraker.env1.JPG)
+
+fügt -g am Ende im Editor ein
+![moonraker.env2](docs/img/moonraker.env2.JPG)
+
+quit and save 
+nun Neustart
+
+in Mainsail klickt auf ungültig und macht soft repair
+fertig!!!!!

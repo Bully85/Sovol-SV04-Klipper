@@ -28,7 +28,9 @@ Currently Cura 5.3 is not supported! but we are working on it...
 - Single mode
 - Bed mesh area
 - Input shapers
+- the Display work
 - and much more
+
 
 ## What you needed:
 
@@ -83,3 +85,20 @@ Done with SSH
 
 Now the files and folders must be copied from "config" to the directory of your printer on the Raspberry. The default is "printer_data". If this is not the case for you, please adjust the paths in the config and .sh files.
 The best way to do this is with an SFTP program, e.g. [FileZilla](https://filezilla-project.org/) (attention PORT 22)
+
+
+## Fix the invalid message in Mainsail:
+
+ssh to Klipper and write
+
+sudo nano ~/printer_data/systemd/moonraker.env
+![moonraker.env1](docs/img/moonraker.env1.JPG)
+
+in the editor add -g at the end
+![moonraker.env2](docs/img/moonraker.env2.JPG)
+
+quit and save 
+now reboot
+
+in Mainsail clic on invalid and make soft repair
+ready!!!!!
