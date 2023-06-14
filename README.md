@@ -9,27 +9,28 @@ This repository contains all the necessary configuration files for the SV04 to w
 
 # _Für die deutsche Anleitung wählt bitte READMEdeutsch.md_
 
-# Introduction:
+# Introduction
 
-Before starting, verify whether your chip is STM or GD. You can do this by opening your electric box and checking, or by testing the Z-Tilt in Mainsail. If an error occurs, it means you have the GD Chip (see printer.cfg for details).
+Before starting, verify whether your chip is STM or GD. 
+You can do this by either opening your electric box and checking manually, or by navigating to 'Machine -> System Loads -> mcu' in Mainsail.
 
-This guide will help you set up your SV04 with Klipper, including the COPY and MIRROR modes. A special Klipper repository is required for this.
+This guide will help you set up your SV04 with Klipper, including the COPY and MIRROR modes.
 
 
-# In Progress:
+# In Progress
 
-Cura 5.3 is currently not supported, but we are actively working on it.
+Cura 5.3 is currently not supported, but we are working on it.
 
 
 # Features
 
 - Copy Mode (supports different temperatures but does not support first layer settings for the right Extruder)
 - Mirror Mode (supports different temperatures but does not support first layer settings for the right Extruder)
-- Dual mode
-- Single mode
-- Bed mesh area
-- Input shapers
-- Display functionality
+- Dual Mode
+- Single Mode
+- Bed Mesh Levelling
+- Input Shaping
+- Display Functionality
 - And much more
 
 
@@ -38,54 +39,92 @@ Cura 5.3 is currently not supported, but we are actively working on it.
 - Raspberry Pi with WiFi
 - Optional but recommended: Original 7" touch screen
 - Optional: Camera
-- Putty or another SSH program (https://putty.org/)
-- FileZilla or another SFTP program (https://filezilla-project.org/)
+- SSH; For example:
+    - Powershell and Windows Terminal have SSH built-in
+    - alternatively Putty or another SSH program (https://putty.org/)
+- SFTP or SCP; For example:
+    - FileZilla (https://filezilla-project.org/)
+    - WinScp (https://winscp.net)
 - Pi Imager (https://www.raspberrypi.com/software/)
 - The configuration files provided in this repository
-- SD card (max 8GB, formatted in Fat32 4096)
+- MicroSD Card for the Raspi (min 8GB, the complete install is ~5.5GB)
+- SD Card to flash the SV04 (max 8GB, formatted in Fat32 4096)
 
 
-# Installation
+# Installation via pre-made OS image
 
-The operating system for the Raspberry Pi can be found in the "[image Raspberry PI 3_4](https://drive.google.com/drive/folders/1rZepxzwUR5QTXRXcv5EBYin_gFiMcKVD)" directory. This should be installed onto an SD card using the [Raspberry Pi Imager](https://www.raspberrypi.com/software/). Make sure to adjust your WiFi settings immediately (you can find them by clicking on the cog wheel in the bottom right corner). The firmware.bin file in the "Firmware bin" directory should be placed on the SD card and flashed onto the printer with the original display unplugged (the original display is not needed at this stage as it will not function). The files from the "config" directory should then be transferred to the Raspberry Pi as described below or directly in the Mainsail interface (this can be accessed by entering the IP address of the Raspberry Pi, which can be found in your router).
+The operating system for the Raspberry Pi can be found in the "[image Raspberry PI 3_4](https://drive.google.com/drive/folders/1rZepxzwUR5QTXRXcv5EBYin_gFiMcKVD)" directory. 
+This should be installed onto the MicroSD card using the [Raspberry Pi Imager](https://www.raspberrypi.com/software/). 
+Make sure to adjust your WiFi settings before writing the image (you can find them by clicking on the cog wheel in the bottom right corner). 
+
+The firmware.bin file in the "Firmware bin" directory should be placed on the (Full Size)SD card and flashed onto the printer with the original display unplugged (the original display is not needed at this stage as it will not function). 
+The files from the "config" directory should now be transferred to the Raspberry Pi as described [below](#transferring-files), or directly in the Mainsail interface, which can be accessed by using the IP address or Hostname.
+- the Hostname can be configured in the WiFi Settings in Pi Imager 
+- the IP can be found in your router
 
 
-# Installation in Existing System
+# Installation on an Existing OS
 
 ## Without Kiauh
 
 Coming soon.
 
 ## If you use Kiauh
-- Log in to the Raspberry Pi via SSH and enter the following command:
+Follow the [Kiauh](https://github.com/th33xitus/kiauh) instructions first, then come back.
 
+- Log in to the Raspberry Pi [via SSH](#using-ssh) and enter the following command:
 ```sh 
 sudo nano kiauh/klipper_repos.txt.example
 ```
 
 - Add the following line at the end (see image below):
-
 ```sh 
 https://github.com/Bully85/klipper
 ```
-
 ![KiauhSV04](docs/img/klipper_repos.txt.PNG)
 
-- Save the file with Ctrl+X, then press Y. 
-- Remove ".example" from the file name and press Enter, then Y. 
-- Open Kiauh with the command 
+- Save the file with Ctrl+X -> Y. 
+- Rename the file to remove ".example" from the file name and press Enter, then Y. 
+- Run Kiauh with the command 
 ```sh 
 ./kiauh/kiauh.sh
 ```
-- Choose [6] 
+- Select Settings [6] 
 - Then [1] to set the custom Klipper repository
-- Select [4] "Bully85/klipper"
+- Choose [4] "Bully85/klipper"
 - Then confirm everything with [y].
 
-Exit SSH by pressind Ctrl+D.
+Exit SSH
 
-Now, the files and folders from the "config" directory must be copied to your printer's directory on the Raspberry Pi. The default is "printer_data". If this is not the case for you, please adjust the paths in the config and .sh files. 
-The best way to do this is with an SFTP program, such as [FileZilla](https://filezilla-project.org/) (note: use PORT 22).
+
+# Installation on a new OS 
+
+Using the Raspi Imager, install Mainsail OS from 'Other specific-purpose OS' -> '3D printing' -> 'Mainsail OS'.
+Then boot your Raspi, connect via SSH, and install [Kiauh](https://github.com/th33xitus/kiauh). 
+Now follow the [instructions above](#if-you-use-kiauh) to overwrite the default Klipper install with this one.
+Once done connect via SFTP/SCP, and transfer all the files from this repo's 'config' folder into 'printer_data/config/'.
+Reboot the Raspi for good measure, and you're done.
+
+
+# Using SSH
+
+You can use SSH via a graphical interface as mentioned [above](#requirements), or via the Terminal.
+If you choose something like putty, follow their instructions.
+The Terminal is already installed and usually quicker.
+- open the Windows Terminal (it's called Terminal, not the old CMD), or Powershell 
+- connect by typing 'ssh username@hostname' and enter your password when prompted
+    - username and hostname are the ones you set up [earlier](#installation-via-pre-made-os-image)
+    - if you're installing onto an existing OS, I trust that you know the username and hostname/IP
+- do what you need...
+- to exit, press Ctrl+D
+
+
+# Transferring Files 
+
+Now, the files and folders from the "config" directory must be copied to your printer's directory on the Raspberry Pi. The default is "printer_data". 
+If this is not the case for you, please adjust the paths in the config and .sh files. 
+
+The easiest way to do this is via an SFTP or SCP Program, such as FileZilla or WinScp [mentioned above](#requirements)
 
 
 # Fixing the Invalid Message in Mainsail
