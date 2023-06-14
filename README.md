@@ -1,10 +1,9 @@
 # Sovol-SV04-Klipper
-All Config for the SV04 to work with Klipper Mirror and Copy (include images and description)
+This repository contains all the necessary configuration files for the SV04 to work with Klipper's Mirror and Copy modes, including images and descriptions.
 
 ![KlipperSV04](docs/img/sv04klipper.png)
 
-# Spenden/donate
-
+# Spenden/Donations
 
 [![Donate with PayPal](https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png)](https://www.paypal.com/donate/?hosted_button_id=L85ULXXQKALP6)
 
@@ -12,93 +11,95 @@ All Config for the SV04 to work with Klipper Mirror and Copy (include images and
 
 # Introduction:
 
-First check your Chip if you have STM or GD. you can open your electikbox and look for it or you can test the Z-Tilt in Mainsail (If there is an error you have the GD Chip see printer.cfg)
+Before starting, verify whether your chip is STM or GD. You can do this by opening your electric box and checking, or by testing the Z-Tilt in Mainsail. If an error occurs, it means you have the GD Chip (see printer.cfg for details).
 
-This guide describes how you can klipper your SV04 including COPY and MIRROR. A special repo from
-Klipper is required for this.
+This guide will help you set up your SV04 with Klipper, including the COPY and MIRROR modes. A special Klipper repository is required for this.
 
-#  In progress:
-Currently Cura 5.3 is not supported! but we are working on it...
 
-# What's up?!!!
+# In Progress:
 
-- Copy Mode (with different temperatures / NO first layer settings for the right Extruder it doesnt work)
-- Mirror Mode (with different temperatures  / NO first layer settings for the right Extruder it doesnt work)
+Cura 5.3 is currently not supported, but we are actively working on it.
+
+
+# Features
+
+- Copy Mode (supports different temperatures but does not support first layer settings for the right Extruder)
+- Mirror Mode (supports different temperatures but does not support first layer settings for the right Extruder)
 - Dual mode
 - Single mode
 - Bed mesh area
 - Input shapers
-- the Display work
-- and much more
+- Display functionality
+- And much more
 
 
-## What you needed:
+# Requirements
 
 - Raspberry Pi with WiFi
-- Optional but recommended original 7" touch
-- Optional camera
+- Optional but recommended: Original 7" touch screen
+- Optional: Camera
 - Putty or another SSH program (https://putty.org/)
 - FileZilla or another SFTP program (https://filezilla-project.org/)
-- Pi Imager (Program https://www.raspberrypi.com/software/)
-- The config files I created
-- SD card max 8GB formatted in Fat32 4096
+- Pi Imager (https://www.raspberrypi.com/software/)
+- The configuration files provided in this repository
+- SD card (max 8GB, formatted in Fat32 4096)
+
 
 # Installation
 
-The operating system for the Raspberry can be found in the "[image Raspberry PI 3_4](https://drive.google.com/drive/folders/1rZepxzwUR5QTXRXcv5EBYin_gFiMcKVD)" directory. this is played onto an SD card using the [Raspberry Pi Imager](https://www.raspberrypi.com/software/). Be sure to adjust your wifi settings right away (you can find them by clicking on the cog wheel in the bottom right corner). The firmware.bin in the "Firmware bin" directory is placed on the SD card and flashed onto the printer with the original display unplugged (it is no longer needed for the time being because it no longer works). The files from the "config" directory are then transferred to the Raspberry as described below or directly in the Mainsail interface (this can be accessed by entering the IP address of the Raspberry, which can be read in the router).
+The operating system for the Raspberry Pi can be found in the "[image Raspberry PI 3_4](https://drive.google.com/drive/folders/1rZepxzwUR5QTXRXcv5EBYin_gFiMcKVD)" directory. This should be installed onto an SD card using the [Raspberry Pi Imager](https://www.raspberrypi.com/software/). Make sure to adjust your WiFi settings immediately (you can find them by clicking on the cog wheel in the bottom right corner). The firmware.bin file in the "Firmware bin" directory should be placed on the SD card and flashed onto the printer with the original display unplugged (the original display is not needed at this stage as it will not function). The files from the "config" directory should then be transferred to the Raspberry Pi as described below or directly in the Mainsail interface (this can be accessed by entering the IP address of the Raspberry Pi, which can be found in your router).
 
 
+# Installation in Existing System
 
-# Installation in existing system:
+## Without Kiauh
 
-## Without Kiauh:
+Coming soon.
 
-comming soon
+## If you use Kiauh
+- Log in to the Raspberry Pi via SSH and enter the following command:
 
-## If you use Kiauh:
-- Log in to the Raspberry via ssh and enter the following command:
-```sh
+```sh 
 sudo nano kiauh/klipper_repos.txt.example
 ```
 
-- there you add the following line at the end (see picture):
-```sh
+- Add the following line at the end (see image below):
+
+```sh 
 https://github.com/Bully85/klipper
 ```
 
 ![KiauhSV04](docs/img/klipper_repos.txt.PNG)
 
-- Then save with [ Ctrl X ].
-- then [ y ]
-- Now delete .example in the file name and Enter
-- then [ y ]
-- Now we open Kiauh with the command
-```sh
+- Save the file with Ctrl+X, then press Y. 
+- Remove ".example" from the file name and press Enter, then Y. 
+- Open Kiauh with the command 
+```sh 
 ./kiauh/kiauh.sh
 ```
-- Here we choose [6] settings
-- Then [1] set custom clipper repository
-- [4] Bully85/klipper
-- And confirm everything with [y].
+- Choose [6] 
+- Then [1] to set the custom Klipper repository
+- Select [4] "Bully85/klipper"
+- Then confirm everything with [y].
 
-Done with SSH
+Exit SSH by pressind Ctrl+D.
 
-Now the files and folders must be copied from "config" to the directory of your printer on the Raspberry. The default is "printer_data". If this is not the case for you, please adjust the paths in the config and .sh files.
-The best way to do this is with an SFTP program, e.g. [FileZilla](https://filezilla-project.org/) (attention PORT 22)
+Now, the files and folders from the "config" directory must be copied to your printer's directory on the Raspberry Pi. The default is "printer_data". If this is not the case for you, please adjust the paths in the config and .sh files. 
+The best way to do this is with an SFTP program, such as [FileZilla](https://filezilla-project.org/) (note: use PORT 22).
 
 
-## Fix the invalid message in Mainsail:
+# Fixing the Invalid Message in Mainsail
 
-ssh to Klipper and write
+To fix the invalid message in Mainsail, SSH into Klipper and execute the following command:
 
+```sh 
 sudo nano ~/printer_data/systemd/moonraker.env
+```
 ![moonraker.env1](docs/img/moonraker.env1.JPG)
 
-in the editor add -g at the end
+Append "-g"  to the end of the "MOONRAKER_ARGS" Line: 
 ![moonraker.env2](docs/img/moonraker.env2.JPG)
 
-quit and save 
-now reboot
+Quit and save, then reboot. 
 
-in Mainsail clic on invalid and make soft repair
-ready!!!!!
+In Mainsail, click on 'invalid' and perform a soft repair. Your setup should now be ready!
