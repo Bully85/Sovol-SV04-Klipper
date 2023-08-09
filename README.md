@@ -11,8 +11,9 @@ This repository contains all the necessary configuration files for the SV04 to w
 
 # Introduction
 
-Before starting, verify whether your chip is STM or GD. 
-You can do this by either opening your electric box and checking manually, or by navigating to 'Machine -> System Loads -> mcu' in Mainsail.
+Different configs are required for the STM and GD versions of the printer.
+Both are included in the "printer.cfg" file and you just need to uncomment the correct one.
+You can verify whether your chip is STM or GD by either opening your electric box and checking manually, or by navigating to 'Machine -> System Loads -> mcu' in Mainsail.
 
 This guide will help you set up your SV04 with Klipper, including the COPY and MIRROR modes.
 
@@ -36,7 +37,9 @@ Cura 5.3 is currently not supported, but we are working on it.
 
 # Requirements
 
-- Raspberry Pi with WiFi
+- Raspberry Pi 3 or newer with WiFi
+    - Pi Zero won't work 
+    - Pi 2 may or may not work, not recommended
 - Optional but recommended: Original 7" touch screen
 - Optional: Camera
 - SSH; For example:
