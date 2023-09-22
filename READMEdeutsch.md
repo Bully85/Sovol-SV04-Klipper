@@ -15,7 +15,10 @@ Als erstes solltet Ihr überprüfen, welchen Chip Ihr habt. Entweder Ihr öffnet
 
 Diese Anleitung beschreibt, wie ihr euren SV04, inklusive der COPY und MIRROR modi, Klippern könnt.
 
+# update
+Achtung, die configs haben sich mit dem neuen Update geändert. Bitte fügen Sie IDEX_mode.cfg, Macros.cfg und Start-End-Macro.cfg erneut ein. Wenn das Display benötigt wird, befinden sich diese im Ordner config/SV04-with-display. Andernfalls kann bei installiertem Original-Klipper auch config/SV04-works-with-orign-klipper verwendet werden, jedoch ohne das original Display
 
+solltet ihr neu installieren befolgt weiter diese Anleitung
 # In Arbeit..
 Momentan wird Cura 5.3 nicht untersützt ! wir arbeiten aber dran... 
 
@@ -139,6 +142,6 @@ Speichern und Datei schließen.
 Dann ein Neustart
 
 
-In Mainsail klickt auf 'ungültig' und führt eine Soft Repait durch. 
+In Mainsail klickt auf 'ungültig' und führt eine Soft Repair durch. 
 
 fertig!!!!!
