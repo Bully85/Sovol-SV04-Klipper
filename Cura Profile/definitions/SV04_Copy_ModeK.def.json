@@ -117,7 +117,7 @@
 		"coasting_enable": { "value": true },
 		"coasting_volume": { "value": "0.4 * layer_height * line_width" },
         "coasting_min_volume": { "value": "coasting_volume" },
-        "machine_start_gcode": { "default_value": "M190 S0\nM109 S0\nSET_DUAL_CARRIAGE_MODE MODE=DUPLICATION\nSTART_PRINT EXTRUDER={adhesion_extruder_nr} EXTRUDERS={extruders_enabled_count} EXTRUDER_TEMP={material_print_temperature_layer_0, 0} EXTRUDER1_TEMP={material_print_temperature_layer_0, 1} BED_TEMP={material_bed_temperature_layer_0} AREA_START=%MINX%,%MINY% AREA_END=%MAXX%,%MAXY%"},
+        "machine_start_gcode": { "default_value": "M190 S0\nM109 S0\nG28 X\nSET_DUAL_CARRIAGE CARRIAGE=1 MODE=COPY\nSTART_PRINT EXTRUDER={adhesion_extruder_nr} EXTRUDERS={extruders_enabled_count} EXTRUDER_TEMP={material_print_temperature_layer_0, 0} EXTRUDER1_TEMP={material_print_temperature_layer_0, 1} BED_TEMP={material_bed_temperature_layer_0} AREA_START=%MINX%,%MINY% AREA_END=%MAXX%,%MAXY%"},
         "machine_end_gcode": { "default_value": "END_PRINT" }
     }
 }

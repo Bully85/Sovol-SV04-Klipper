@@ -13,6 +13,8 @@ This repository contains all the necessary configuration files for the SV04 to w
 Click here for the Discord https://discord.gg/8Svd9usX
 # update
 Attention, the configs have changed with the new update. Please re-insert IDEX_mode.cfg, macros.cfg and Start-End-Macro.cfg. If the display is needed, these are in the config/SV04-with-display folder. Otherwise, if the original klipper is installed, config/SV04-works-with-orign-klipper can also be used but without the orign display
+
+Change the Startcode in the Slicer [Cura](Cura Profile/Startcode.md) [Prusa_Slicer](Prusaslicer Profile/Startcode.md)
 # Introduction
 
 Different configs are required for the STM and GD versions of the printer.

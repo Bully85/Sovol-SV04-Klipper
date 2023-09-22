@@ -18,6 +18,8 @@ Diese Anleitung beschreibt, wie ihr euren SV04, inklusive der COPY und MIRROR mo
 # update
 Achtung, die configs haben sich mit dem neuen Update geändert. Bitte fügen Sie IDEX_mode.cfg, Macros.cfg und Start-End-Macro.cfg erneut ein. Wenn das Display benötigt wird, befinden sich diese im Ordner config/SV04-with-display. Andernfalls kann bei installiertem Original-Klipper auch config/SV04-works-with-orign-klipper verwendet werden, jedoch ohne das original Display
 
+Wechsel des Startcode im Slicer [Cura](Cura Profile/Startcode.md) [Prusa_Slicer](Prusaslicer Profile/Startcode.md)
+
 solltet ihr neu installieren befolgt weiter diese Anleitung
 # In Arbeit..
 Momentan wird Cura 5.3 nicht untersützt ! wir arbeiten aber dran... 
