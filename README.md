@@ -1,3 +1,5 @@
+Pleas use the newest release for download "[Release](https://github.com/Bully85/Sovol-SV04-Klipper/releases)"
+
 # Sovol-SV04-Klipper
 This repository contains all the necessary configuration files for the SV04 to work with Klipper's Mirror and Copy modes, including images and descriptions.
 
