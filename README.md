@@ -21,7 +21,7 @@ Change the Startcode in the Slicer [Cura](Cura Profile/Startcode.md) [Prusa_Slic
 
 Different configs are required for the STM and GD versions of the printer.
 Both are included in the "printer.cfg" file and you just need to uncomment the correct one.
-You can verify whether your chip is STM or GD by either opening your electric box and checking manually, or by navigating to 'Machine -> System Loads -> mcu' in Mainsail.
+You can verify whether your chip is STM or GD by either opening your electric box and checking manually, or there is an error message with the z-Tilt.
 
 This guide will help you set up your SV04 with Klipper, including the COPY and MIRROR modes.
 
