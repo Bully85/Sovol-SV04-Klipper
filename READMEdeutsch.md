@@ -11,7 +11,7 @@ Dieses Repository enthält alle notwendigen Konfigurationsdateien, damit der SV0
 
 # Einleitung
 
-Als erstes solltet Ihr überprüfen, welchen Chip Ihr habt. Entweder Ihr öffnet den Elekronikkasten und schaut was auf eurem Chip steht oder ihr guckt in Mainsail unter 'Machine -> System Loads -> mcu'.
+Als erstes solltet Ihr überprüfen, welchen Chip Ihr habt. Entweder Ihr öffnet den Elekronikkasten und schaut was auf eurem Chip steht oder es kommt eine Fehlermeldung beim z-Tilt.
 
 Diese Anleitung beschreibt, wie ihr euren SV04, inklusive der COPY und MIRROR modi, Klippern könnt.
 
