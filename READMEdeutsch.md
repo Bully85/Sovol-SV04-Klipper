@@ -111,7 +111,7 @@ Die Konfigurationsfiles müssen nun auf den MiniPC übertragen werden.
 
 Die Dateien müssen in das Verzeichnis Eurer Klipper Instanz kopiert werden. Standard ist "printer_data". Sollte dies bei Euch anders sein, müsst ihr die Pfade Eurer config und .sh Dateien anpassen.
 
-Der einfachste Weg die Dateien zu transferieren ist mit einem SFTP oder SCP Programm. FileZilla oder WinSCP [oben erwähnt](#requirements) funktionieren gut. Es ist aber auch möglich, die "Upload File" Funktion des Web-Interfaces Eurer neuen Mainsail Instanz zu benutzen. Ihr kommt mit http://*ip-deiner-instanz*/config auf die Oberfläche.
+Der einfachste Weg die Dateien zu transferieren ist mit einem SFTP oder SCP Programm. FileZilla oder WinSCP [oben erwähnt](#Benötigt) funktionieren gut. Es ist aber auch möglich, die "Upload File" Funktion des Web-Interfaces Eurer neuen Mainsail Instanz zu benutzen. Ihr kommt mit http://*ip-deiner-instanz*/config auf die Oberfläche.
 - Der Hostname ist der Name den ihr in den WiFi Einstellungen im Pi Imager angegeben habt.
 - Die IP Adresse findet ihr auf Eurem Router
 
